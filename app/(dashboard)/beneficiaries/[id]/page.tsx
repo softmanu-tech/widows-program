@@ -1,16 +1,22 @@
-"use client";
-
-import { useState } from "react";
-import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
-export default function BeneficiaryDetailsPage() {
-    const params = useParams();
-    const [activeTab, setActiveTab] = useState("overview");
+export async function generateStaticParams() {
+    // This should ideally come from your data source
+    // For now, we'll generate some static IDs
+    return [
+        { id: '1' },
+        { id: '2' },
+        { id: '3' },
+        // Add more IDs as needed
+    ];
+}
+
+export default function BeneficiaryDetailsPage({params}: {params: {id: string}}) {
+
 
     // Mock data - replace with API call
     const beneficiary = {
@@ -75,7 +81,7 @@ export default function BeneficiaryDetailsPage() {
                     </CardContent>
                 </Card>
 
-                <Tabs value={activeTab} onValueChange={setActiveTab}>
+                <Tabs defaultValue={'overview'}>
                     <TabsList>
                         <TabsTrigger value="overview">Overview</TabsTrigger>
                         <TabsTrigger value="programs">Programs</TabsTrigger>

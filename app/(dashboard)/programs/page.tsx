@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ProgramList } from "@/components/programs/program-list";
 import { AddProgramDialog } from "@/components/programs/add-program-dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -30,13 +29,13 @@ export default function ProgramsPage() {
           <TabsTrigger value="completed">Completed</TabsTrigger>
         </TabsList>
         <TabsContent value="active">
-          <ProgramList status="active" />
+          {/*<ProgramList status="active" />*/}
         </TabsContent>
         <TabsContent value="upcoming">
-          <ProgramList status="upcoming" />
+          {/*<ProgramList status="upcoming" />*/}
         </TabsContent>
         <TabsContent value="completed">
-          <ProgramList status="completed" />
+          {/*<ProgramList status="completed" />*/}
         </TabsContent>
       </Tabs>
 

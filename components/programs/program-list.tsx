@@ -51,7 +51,7 @@ export function ProgramList({ status }: ProgramListProps) {
                   <span>Progress</span>
                   <span>{Math.round((program.enrolled / program.capacity) * 100)}%</span>
                 </div>
-                <Progress value={(program.enrolled / program.capacity) * 100} />
+                <Progress value={10} /> {/* (program.enrolled / program.capacity) * 100*/}
               </div>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
